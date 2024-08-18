@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Установить часы</title>
+<title>Установка фиксированного времени</title>
 <link href="/bootstrap.min.css" rel="stylesheet">
 <script src="/jquery3.min.js"></script>
 </head>
@@ -32,8 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
         <div class="modal-dialog" role="document">
           <div class="modal-content rounded-4 shadow">
+            <div class="modal-body border-bottom-0">
+              <a href="/" class="mb-2 btn btn-lg rounded-3 btn-outline-primary"><img src="/home.png" width="30px" /></a>
+              <a href="<?=$_SERVER['HTTP_REFERER'];?>" class="mb-2 btn btn-lg rounded-3 btn-outline-primary" style="float: right;"><img src="/back.png" width="30px" /></a>
+            </div>
+
             <div class="modal-header p-5 pb-4 border-bottom-0">
-              <h1 class="fw-bold mb-0 fs-2">Установить часы</h1>
+              <h1 class="fw-bold mb-0 fs-4">Установка фиксированного времени</h1>
             </div>
       
             <div class="modal-body p-5 pt-0">
@@ -46,9 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     Секунд: <input type="number" min="0" max="59" name="s" class="form-control" placeholder="00" required="" value="<?=$s;?>"><br><br>
                     </h2>
                 </div>
-              <form method="POST">
                 <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Сохранить</button>
-                <small class="text-body-secondary">Какая-то интересная надпись.</small>
+                <br><br>
+                <small class="text-body-secondary">Установка фиксированного времени при отсутствии внешних источников происходит только при полной потере связи.</small>
               </form>
             </div>
           </div>

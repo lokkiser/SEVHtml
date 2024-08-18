@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Set the clock</title>
+<title>Set fix time</title>
 <link href="/bootstrap.min.css" rel="stylesheet">
 <script src="/jquery3.min.js"></script>
 </head>
@@ -32,8 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
         <div class="modal-dialog" role="document">
           <div class="modal-content rounded-4 shadow">
+            <div class="modal-body border-bottom-0">
+              <a href="/" class="mb-2 btn btn-lg rounded-3 btn-outline-primary"><img src="/home.png" width="30px" /></a>
+              <a href="<?=$_SERVER['HTTP_REFERER'];?>" class="mb-2 btn btn-lg rounded-3 btn-outline-primary" style="float: right;"><img src="/back.png" width="30px" /></a>
+            </div>
+
             <div class="modal-header p-5 pb-4 border-bottom-0">
-              <h1 class="fw-bold mb-0 fs-2">Set the clock</h1>
+              <h1 class="fw-bold mb-0 fs-4">Set fix time</h1>
             </div>
       
             <div class="modal-body p-5 pt-0">
@@ -47,7 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </h2>
                 </div>
                 <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Save</button>
-                <small class="text-body-secondary">Some interesting inscription.</small>
+                <br><br>
+                <small class="text-body-secondary">Setting a fixed time in the absence of external sources occurs only in the event of a complete loss of communication.</small>
               </form>
             </div>
           </div>
