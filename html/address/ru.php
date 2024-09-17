@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      	$mac = htmlspecialchars(($_POST["mac"]));
      }
      
-     /*$connection = ssh2_connect($sship, $sshport);
+     $connection = ssh2_connect($sship, $sshport);
      if (ssh2_auth_password($connection, $sshlogin, $sshpass)) {
      	$cmd="/ip address remove [find comment=address];";
      	ssh2_exec($connection, $cmd);
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	    ssh2_disconnect($connection);
      } else {
 	    die('<h1>Невозможно подключиться (возможно неверный логин или пароль?)</h1>');
-     }*/
+     }
 	 file_put_contents($path_to_source, $ip);
      
      die("<meta http-equiv='refresh' content='2; URL=http://$ip/' /><h1>Успешно!</h1>");
