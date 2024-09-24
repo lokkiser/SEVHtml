@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      } else {
 	    die('<h1>Невозможно подключиться (возможно неверный логин или пароль?)</h1>');
      }
-	 file_put_contents($path_to_source, $ip);
+	 # file_put_contents($path_to_source, $ip);
      
      die("<meta http-equiv='refresh' content='2; URL=http://$ip/' /><h1>Успешно!</h1>");
   }  
